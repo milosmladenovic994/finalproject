@@ -91,7 +91,8 @@
 }
 
 .btn--round {
-  background-image: $gradient;
+  background-image: none;
+  background-color: lightgray;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -99,6 +100,8 @@
   width: 4.5rem;
   // margin-left: auto;
   transition: all 0.2s;
+  // fill: yellowgreen;
+  
 
   display: flex;
   align-items: center;
@@ -106,16 +109,21 @@
 
   &:hover {
     transform: scale(1.07);
+    // color: yellowgreen;
+    background-image: none;
+    background-color: yellowgreen;
   }
 
   &:focus {
     outline: none;
+    fill: yellowgreen;
+    background-color: yellowgreen;
   }
 
   svg {
     height: 2.5rem;
     width: 2.5rem;
-    fill: #fff;
+    fill: rgb(240, 221, 4);
   }
 }
 

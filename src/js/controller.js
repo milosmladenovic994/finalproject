@@ -21,6 +21,7 @@ if(module.hot){
 
 
 const recipeContainer = document.querySelector('.recipe');
+// const btn = document.getElementsByClassName('.btn--round');
 
 
 
@@ -70,7 +71,7 @@ try {
   ResultsView.renderSpinner();
   
   
-  console.log(ResultsView);
+  // console.log(ResultsView);
   await model.loadSearchResult(query);
   // console.log(model.state.search.results);
 
@@ -106,17 +107,18 @@ recipeView.update(model.state.recipe);
 
 };
 
+
 const controlAddBookmark = function(){
   //add or remove bookmark
   if(!model.state.recipe.bookmarked) {
     model.addBookmark(model.state.recipe)
   }else {
-    model.deleteBookmark(model.state.recipe)
+    model.deleteBookmark(model.state.recipe.id)
   };
   // model.addBookmark(model.state.recipe);
   recipeView.update(model.state.recipe);
   bookmarksView.render(model.state.bookmarks);
-  console.log(localStorage)
+  // console.log(localStorage)
   
   
 };

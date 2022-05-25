@@ -33,7 +33,9 @@ class RecipeView extends View{
         if(!btn) return;
         handler();
       })
-    }
+    };
+
+
 
     
 
