@@ -27,14 +27,18 @@ class RecipeView extends View{
       })
     }
 
+    
     addHandlerAddBookmark(handler){
       this._parentElement.addEventListener('click', function(e){
         const btn = e.target.closest('.btn--bookmark');
+        document.querySelector('.btn--round').classList.toggle('.style');
         if(!btn) return;
         handler();
       })
     };
-
+   
+    
+   
 
 
     
