@@ -49,13 +49,13 @@ export const loadRecipe = async function(id){
 export const loadSearchResult = async function(query){
     try{
         state.search.query = query;
-        if(query==='' && query<2){
-            // alert('bad')
-            document.querySelector('.btn').setAttribute('disabled', 'disabled');
-        }else if(query>3){
-            document.querySelector('.btn').removeAttribute('disabled');
+        // if(query==='' && query<2){
+        //     // alert('bad')
+        //     document.querySelector('.btn').setAttribute('disabled', 'disabled');
+        // }else if(query>3){
+        //     document.querySelector('.btn').removeAttribute('disabled');
             
-        };
+        // };
         const data = await getJson(`${API_URL}?search=${query}`);
         console.log(data);
 
