@@ -20,7 +20,7 @@ if(!btn)return;
 
         const currentPage = this._data.page;
         const numPages = Math.ceil(this._data.results.length / this._data.resultsPerPage);
-        console.log(numPages);
+        // console.log(numPages);
 
         if(currentPage === 1 && numPages>1){
             return `
