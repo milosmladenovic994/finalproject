@@ -13,6 +13,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime/runtime';
 import resultsView from './resultsView.js';
+import searchView from './searchView.js';
 // console.log(icons);
 
 if(module.hot){
@@ -160,6 +161,7 @@ recipeView.addHandlerender(showRecipe);
 recipeView.addHandlerUpdateServings(controlServings);
 recipeView.addHandlerAddBookmark(controlAddBookmark);
 SearchView.addHandlerSearch(controlSearchResults);
+searchView.disableInput(controlSearchResults);
 paginationView.addHandlerClick(controlPagination);
 addRecipeView.addHandlerUpload(controlAddRecipe);
 

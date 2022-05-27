@@ -1,17 +1,12 @@
 class SearchView{
 _parentEl = document.querySelector('.search');
+input = document.getElementById('inputField');
 
 getQuery(){
     const query = this._parentEl.querySelector('.search__field').value;
     // const src = this._parentEl.querySelector('.search__btn');
     console.log(query.length);
-    if(query.length<2 || query.length===0 || query === ''){
-        // alert('too short');
-        document.querySelector('.search__btn').disabled = true;
-    }else{
-        document.querySelector('.search__btn').removeAttribute('disabled');
-        
-    }
+    
     this._clearInput();
     return query;
     
@@ -29,6 +24,19 @@ handler();
     
 }
 
+disableInput(){
+this.input.addEventListener('input', (e) => {
+    e.preventDefault();
+    console.log(this.input)
+    this.input.value.length < 2
+        ? document.querySelector('.search__btn').disabled = true
+        : document.querySelector('.search__btn').removeAttribute('disabled');
+    
+})
+}
+
 };
+
+
 
 export default new SearchView();

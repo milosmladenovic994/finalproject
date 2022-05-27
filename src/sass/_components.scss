@@ -20,6 +20,12 @@
   & > *:first-child {
     margin-right: 1rem;
   }
+
+  &:disabled {
+    background-image: none;
+    transform: none;
+    background-color: grey;
+  }
 }
 
 .btn {
