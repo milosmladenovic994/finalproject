@@ -28,7 +28,7 @@ disableInput(){
 this.input.addEventListener('input', (e) => {
     e.preventDefault();
     console.log(this.input)
-    this.input.value.length < 2
+    this.input.value.length <= 2
         ? document.querySelector('.search__btn').disabled = true
         : document.querySelector('.search__btn').removeAttribute('disabled');
     
