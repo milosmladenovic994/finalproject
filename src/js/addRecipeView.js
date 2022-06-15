@@ -43,7 +43,7 @@ class AddRecipeView extends View {
             e.preventDefault();
             console.log(this._btnOpen)
             const id = window.location.hash.slice(1);
-            !id ? document.querySelector('.upload__btn').disabled = true
+            !id ? document.querySelector('.upload__btn').disabled = true && alert('select type of meal and meal')
             :     document.querySelector('.upload__btn').removeAttribute('disabled');
         })
         }
