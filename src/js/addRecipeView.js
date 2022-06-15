@@ -38,6 +38,15 @@ class AddRecipeView extends View {
             handler(data);
         })
     }
+    disableUpload(){
+        this._btnOpen.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            console.log(this._btnOpen)
+            const id = window.location.hash.slice(1);
+            !id ? document.querySelector('.upload__btn').disabled = true
+            :     document.querySelector('.upload__btn').removeAttribute('disabled');
+        })
+        }
 
 
     _generateMarkup() {

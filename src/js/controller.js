@@ -140,7 +140,8 @@ const controlAddRecipe = async function(newRecipe){
 
   //success message
   addRecipeView.renderMessage('Thank you for uploading recipe');
- 
+  
+//  window.location.reload();
 
 
   //render bookmark view
@@ -181,6 +182,7 @@ recipeView.addHandlerAddBookmark(controlAddBookmark);
 SearchView.addHandlerSearch(controlSearchResults);
 searchView.disableInput(controlSearchResults);
 paginationView.addHandlerClick(controlPagination);
+addRecipeView.disableUpload(controlAddRecipe);
 addRecipeView.addHandlerUpload(controlAddRecipe);
 
 };

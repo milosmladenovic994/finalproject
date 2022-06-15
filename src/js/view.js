@@ -92,5 +92,5 @@ export default class View {
     setTimeout(function(){
       window.location.reload();
    }, 2000);
-    };
+   };
 }
