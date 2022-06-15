@@ -20,7 +20,7 @@ export const loadRecipe = async function(id){
     try{
 
         const data= await getJson(`${API_URL}${id}`);
-
+        
   
         console.log( data);
         const { recipe } = data.data;
@@ -96,7 +96,7 @@ export const updateServings = function(newServings){
 
 const storageset = function(){
     localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
-    console.log(state.bookmarks);
+    // console.log(state.bookmarks);
 }
 
 
@@ -134,16 +134,15 @@ const storeBkms = function(){
 storeBkms();
 export const uploadRecipe = async function(newRecipe){
     try{
-    const ingredients = Object.entries(newRecipe).filter(function(entry){
-        return entry[0].startsWith('ingredient') && entry[1] !=='';
-    }).map(function(ing){
+    const ingredients = Object.entries(newRecipe).filter(entry => entry[0].startsWith('ingredient') && entry[1] !==''
+    ).map(ing => {
 
         const ingArr = ing[1].replaceAll(' ', '').split(',');
-        // if(ingArr.lenght !== 3)throw new Error('Wrong ingredient format, use the correct one');
+        if(ingArr.length !== 3) throw new Error('Wrong ingredient format, use the correct one');
         const [quantity, unit, description] = ingArr;
 
 
-        return {quantity : quantity ? +quantity: null, unit, description};
+        return {quantity : quantity ? +quantity: null, unit, description}
     });
     const recipe = {
         title: newRecipe.title,
@@ -151,7 +150,7 @@ export const uploadRecipe = async function(newRecipe){
         image_url: newRecipe.image,
         publisher:newRecipe.publisher,
         cooking_time: +newRecipe.cookingTime,
-        servings: newRecipe.servings,
+        servings: +newRecipe.servings,
         ingredients,
     };
     // console.log(recipe);

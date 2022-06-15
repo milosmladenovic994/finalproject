@@ -128,12 +128,19 @@ const controlAddBookmark = function(){
 const controlAddRecipe = async function(newRecipe){
   // console.log(newRecipe);
   try{
+    // const id = window.location.hash.slice(1);
+    // // console.log(id);
+
+    // if(!id)return;
+    // if(!model.state.recipe.id)
+    // {addRecipeView.renderError('Select type of meal')};
   await model.uploadRecipe(newRecipe);
   //render recipe
   recipeView.render(model.state.recipe);
 
   //success message
   addRecipeView.renderMessage('Thank you for uploading recipe');
+ 
 
 
   //render bookmark view
@@ -152,7 +159,13 @@ const controlAddRecipe = async function(newRecipe){
 
   }catch(err){
     console.error('Private error', err);
-    addRecipeView.renderError('First select type of meal, and then upload recipe to a desired section!');
+    addRecipeView.renderError(err.message);
+    document.querySelector(".btn--close-modal").addEventListener("click", function (){
+      location.reload();
+    })
+    document.querySelector(".overlay").addEventListener("click", function (){
+      location.reload();
+    })
   }
 }
 

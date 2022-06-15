@@ -89,5 +89,8 @@ export default class View {
       `
       this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
+    setTimeout(function(){
+      window.location.reload();
+   }, 2000);
     };
 }
