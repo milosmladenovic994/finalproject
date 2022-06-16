@@ -98,6 +98,10 @@ const storageset = function(){
     localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
     // console.log(state.bookmarks);
 }
+const storageremove = function(){
+    localStorage.removeItem("bookmarks", JSON.stringify(state.bookmarks));
+    // console.log(state.bookmarks);
+}
 
 
 export const addBookmark = function(recipe){
@@ -122,7 +126,7 @@ export const deleteBookmark = function(id){
 //remove bookmark
     if(state.recipe.id === state.recipe.id) state.recipe.bookmarked =false;
     state.recipe.bookmarked = false;
-    storageset();
+    storageremove();
 };
 
 const storeBkms = function(){
