@@ -141,7 +141,6 @@ const controlAddRecipe = async function(newRecipe){
   //success message
   addRecipeView.renderMessage('Thank you for uploading recipe');
   
-//  window.location.reload();
 
 
   //render bookmark view
@@ -151,6 +150,10 @@ const controlAddRecipe = async function(newRecipe){
   //change id in url
 
   window.history.pushState(null, '', `#${model.state.recipe.id}`);
+  setTimeout(() => {
+    window.location.href = "index.html";
+  }, 2000);
+  
   
 
   //close form window
